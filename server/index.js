@@ -1,13 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
+const userRoute = require('./Routes/userRoute');
 
 const app = express();
 require('dotenv').config();
 
 app.use(express.json());
 app.use(cors());
+app.use('/api/users', userRoute);
 
 const port = process.env.PORT || 3000;
 const uri = process.env.ATLAS_URI;
