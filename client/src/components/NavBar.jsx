@@ -9,7 +9,7 @@ const NavBar = () => {
             <h2>
             <Link to='/' className='link-light text-decoration-none'>ChattApp </Link>
             </h2>
-
+            <span className='text-warning'>Logged in as Olha</span>
             <Nav>
                 <Stack direction='horizontal' gap={3}>
                 <Link to='/login' className='link-light text-decoration-none'>Login </Link>
