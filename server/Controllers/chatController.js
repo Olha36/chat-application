@@ -24,4 +24,20 @@ const createChat = async (req, res) => {
   }
 };
 // getAllChats
+
+const findUserChats = async (req, res) => {
+  const userId = req.params.userId;
+
+  try {
+    const chats = await chatModel.find({
+      members: { $in: [userId] },
+    });
+
+    res.status(200).json(chats);
+    
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(error);
+  }
+};
 // find chat
