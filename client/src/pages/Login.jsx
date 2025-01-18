@@ -4,18 +4,12 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
-  const {
-    logoutUser,
-    loginUser,
-    loginError,
-    loginInfo,
-    updateLoginInfo,
-    isLoginLoading,
-  } = useContext(AuthContext);
+  const { loginUser, loginError, loginInfo, updateLoginInfo, isLoginLoading } =
+    useContext(AuthContext);
 
   return (
     <>
-      <Form>
+      <Form onSubmit={loginUser}>
         <Row
           style={{
             height: "100vh",
@@ -41,11 +35,14 @@ const Login = () => {
                 }
               />
               <Button variant="primary" type="submit">
-                Login
+                {isLoginLoading ? "Getting you in..." : "Login"}
               </Button>
-              <Alert variant="danger">
-                <p>An error occured</p>
-              </Alert>
+
+              {loginError?.error && (
+                <Alert variant="danger">
+                  <p>{loginError?.message}</p>
+                </Alert>
+              )}
             </Stack>
           </Col>
         </Row>
