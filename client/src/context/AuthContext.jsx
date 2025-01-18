@@ -19,24 +19,28 @@ export const AuthContextProvider = ({ children }) => {
     setRegisterInfo(info);
   }, []);
 
-  const registerUser = useCallback(async () => {
-    setisRegisterLoading(true);
-    setRegisterError(null);
+  const registerUser = useCallback(
+    async (e) => {
+      e.preventDefault();
+      setisRegisterLoading(true);
+      setRegisterError(null);
 
-    const response = await postRequest(
-      `${baseUrl}/users/register`,
-      JSON.stringify(registerInfo)
-    );
+      const response = await postRequest(
+        `${baseUrl}/users/register`,
+        JSON.stringify(registerInfo)
+      );
 
-    setisRegisterLoading(false);
+      setisRegisterLoading(false);
 
-    if (response.error) {
-      return setRegisterError(response);
-    }
+      if (response.error) {
+        return setRegisterError(response);
+      }
 
-    localStorage.setItem("User", JSON.stringify(response));
-    setUser(response);
-  }, []);
+      localStorage.setItem("User", JSON.stringify(response));
+      setUser(response);
+    },
+    [registerInfo]
+  );
 
   return (
     <AuthContext.Provider
@@ -44,6 +48,9 @@ export const AuthContextProvider = ({ children }) => {
         user,
         registerInfo,
         updateRegisterInfo,
+        registerUser,
+        registerError,
+        isRegisterLoading,
       }}
     >
       {children}
