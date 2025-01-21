@@ -1,5 +1,11 @@
-const UserChat = () => {
-  return (<>User chat</>)
+import { useFetchRecipientUser } from "../../hooks/useFetchRecipient";
+
+const UserChat = ({ chat, user }) => {
+  const { recipientUser } = useFetchRecipientUser(chat, user);
+
+  console.log("recipient user is:", recipientUser);
+
+  return <>User chat</>;
 };
 
 export default UserChat;

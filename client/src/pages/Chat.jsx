@@ -9,8 +9,6 @@ const Chat = () => {
   const { userChats, isUserChatsLoading, userChatsError } =
     useContext(ChatContext);
 
-  console.log("UserChats:", userChats);
-
   return (
     <Container>
       {userChats?.length < 1 ? null : (
