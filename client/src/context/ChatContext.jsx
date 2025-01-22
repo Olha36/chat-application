@@ -116,7 +116,7 @@ export const ChatContextProvider = ({ children, user }) => {
         potentialChats,
         createChat,
         updateCurrentChat,
-        currentChat, // Add this line
+        currentChat, 
         messages,
         isMessagesLoading,
         messagesError,
