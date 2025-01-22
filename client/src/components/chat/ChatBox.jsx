@@ -17,11 +17,6 @@ const ChatBox = () => {
       </p>
     );
 
-  if (!isMessagesLoading)
-    return (
-      <p style={{ textAlign: "center", width: "100%" }}>Loading chat...</p>
-    );
-
   return <>ChatBox</>;
 };
 
