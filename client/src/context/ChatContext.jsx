@@ -12,8 +12,8 @@ export const ChatContextProvider = ({ children, user }) => {
   const [messages, setMessages] = useState(null);
   const [isMessagesLoading, setIsMessagesLoading] = useState(false);
   const [messagesError, setMessagesError] = useState(null);
-
-  console.log("messages", messages);
+  console.log('messages:', messages);
+  
 
   useEffect(() => {
     const getUsers = async () => {
@@ -23,7 +23,7 @@ export const ChatContextProvider = ({ children, user }) => {
         return console.log("Error fetching users:", response);
       }
 
-      const pChats = response.filter((u) => {
+      const pChats = response?.filter((u) => {
         let isChatCreated = false;
 
         if (user?._id === u._id) return false;
@@ -62,6 +62,7 @@ export const ChatContextProvider = ({ children, user }) => {
     };
 
     getUserChats();
+
   }, [user]);
 
   useEffect(() => {
