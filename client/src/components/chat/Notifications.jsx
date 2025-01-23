@@ -1,8 +1,25 @@
-import React from "react";
-import { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ChatContext } from "../../context/chatContext";
+import { AuthContext } from "../../context/authContext";
+import { unreadNotificationsFunc } from "../../utils/unreadNotifications";
 
 const Notifications = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user } = useContext(AuthContext);
+  const { notifications, userChats, allUsers } = useContext(ChatContext);
+
+  const unreadNofitications = unreadNotificationsFunc(notifications);
+  const modifiedNotifications = notifications.map((n) => {
+    const sender = allUsers.find(user => user._id === n.senderId);
+
+    return {
+      ...n,
+      senderName: sender?.name
+    }
+  });
+
+  console.log('unread not:', unreadNofitications);
+  console.log('modified not:', modifiedNotifications);
 
   return (
     <div className="notifications">

@@ -18,6 +18,7 @@ export const ChatContextProvider = ({ children, user }) => {
   const [socket, setSocket] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const [notifications, setNotifications] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
 
   console.log("notifications:", notifications);
 
@@ -69,7 +70,7 @@ export const ChatContextProvider = ({ children, user }) => {
       if (isChatOpen) {
         setNotifications((prev) => [{ ...res, isRead: true }, ...prev]);
       } else {
-        setNotifications(prev => [res, ...prev])
+        setNotifications((prev) => [res, ...prev]);
       }
     });
 
@@ -102,6 +103,7 @@ export const ChatContextProvider = ({ children, user }) => {
       });
 
       setPotentialChats(pChats);
+      setAllUsers(response);
     };
 
     getUsers();
@@ -208,7 +210,8 @@ export const ChatContextProvider = ({ children, user }) => {
         sendTextMessage,
         // socket,
         onlineUsers,
-        notifications
+        notifications,
+        allUsers,
       }}
     >
       {children}
