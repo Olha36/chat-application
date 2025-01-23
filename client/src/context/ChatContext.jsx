@@ -29,12 +29,18 @@ export const ChatContextProvider = ({ children, user }) => {
     };
   }, [user]);
 
+  // add online users
+
   useEffect(() => {
     if (socket === null) return;
     socket.emit("addNewUser", user?._id);
     socket.on("getOnlineUsers", (res) => {
       setOnlineUsers(res);
     });
+
+    return () => {
+      socket.off("getOnlineUsers");
+    };
   }, [socket]);
 
   useEffect(() => {
