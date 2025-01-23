@@ -194,6 +194,13 @@ export const ChatContextProvider = ({ children, user }) => {
     setUserChats((prev) => [...prev, response]);
   }, []);
 
+  const markAllNotificationsAsRead = useCallback((notifications) => {
+    const mNotifications = notifications.map((n) => {
+      return { ...n, isRead: true };
+    });
+    setNotifications(mNotifications);
+  }, []);
+
   return (
     <ChatContext.Provider
       value={{
@@ -212,6 +219,7 @@ export const ChatContextProvider = ({ children, user }) => {
         onlineUsers,
         notifications,
         allUsers,
+        markAllNotificationsAsRead,
       }}
     >
       {children}
