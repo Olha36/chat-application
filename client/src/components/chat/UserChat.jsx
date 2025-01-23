@@ -7,7 +7,8 @@ import { unreadNotificationsFunc } from "../../utils/unreadNotifications";
 
 const UserChat = ({ chat, user }) => {
   const { recipientUser } = useFetchRecipientUser(chat, user);
-  const { onlineUsers, notifications } = useContext(ChatContext);
+  const { onlineUsers, notifications, markThisUserNotificationsAsRead } =
+    useContext(ChatContext);
 
   const unreadNotifications = unreadNotificationsFunc(notifications);
   const thisUserNotifications = unreadNotifications?.filter(
@@ -24,6 +25,11 @@ const UserChat = ({ chat, user }) => {
       gap={3}
       className="user-card align-items-center p-2 justify-content-between"
       role="button"
+      onClick={() => {
+        if (thisUserNotifications?.length !== 0) {
+          markThisUserNotificationsAsRead(thisUserNotifications, notifications);
+        }
+      }}
     >
       <div className="d-flex">
         <div className="me-2">
