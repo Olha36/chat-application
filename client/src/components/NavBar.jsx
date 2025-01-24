@@ -9,7 +9,7 @@ import { AuthContext } from "../context/authContext";
 const NavBar = () => {
   const { user, logoutUser } = useContext(AuthContext);
   return (
-    <Navbar bg="dark" className="mb-4" style={{ height: "3.75rem" }}>
+    <Navbar className="mb-4" style={{ height: "3.75rem", backgroundColor: "#b07ac5" }}>
       <Container>
         <h2>
           <Link to="/" className="link-light text-decoration-none">
@@ -17,7 +17,7 @@ const NavBar = () => {
           </Link>
         </h2>
         {user && (
-          <span className="text-warning">Logged in as {user?.name} </span>
+          <span className="text-muted">Logged in as {user?.name} </span>
         )}
         <Nav>
           <Stack direction="horizontal" gap={3}>
