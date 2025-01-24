@@ -199,3 +199,23 @@ body {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 767px) {
+  .messages-box {
+    height: 60vh;
+  }
+  .messages-container {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 575px) {
+  .text-warning {
+    margin-left: 8%;
+  }
+  .navbar>.container {
+    flex-direction: column;
+    margin-top: 10%;
+  }
+  .container {
+    margin-top: 25%;
+  }
+}
