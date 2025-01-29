@@ -1,0 +1,61 @@
+{
+  "hash": "535c9043",
+  "configHash": "1c75312a",
+  "lockfileHash": "a47edf78",
+  "browserHash": "bb578de1",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "4c13f8a5",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "bf948839",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.mjs",
+      "file": "react-router-dom.js",
+      "fileHash": "ad72da2e",
+      "needsInterop": false
+    },
+    "react-bootstrap": {
+      "src": "../../node_modules/react-bootstrap/esm/index.js",
+      "file": "react-bootstrap.js",
+      "fileHash": "4d403a54",
+      "needsInterop": false
+    },
+    "socket.io-client": {
+      "src": "../../node_modules/socket.io-client/build/esm/index.js",
+      "file": "socket__io-client.js",
+      "fileHash": "e5f9b8fc",
+      "needsInterop": false
+    },
+    "moment": {
+      "src": "../../node_modules/moment/dist/moment.js",
+      "file": "moment.js",
+      "fileHash": "33e27f88",
+      "needsInterop": false
+    },
+    "react-input-emoji": {
+      "src": "../../node_modules/react-input-emoji/dist/index.es.js",
+      "file": "react-input-emoji.js",
+      "fileHash": "df6eee88",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-NPU5F6LQ": {
+      "file": "chunk-NPU5F6LQ.js"
+    },
+    "chunk-7JZAKNLV": {
+      "file": "chunk-7JZAKNLV.js"
+    },
+    "chunk-2TUXWMP5": {
+      "file": "chunk-2TUXWMP5.js"
+    }
+  }
+}
