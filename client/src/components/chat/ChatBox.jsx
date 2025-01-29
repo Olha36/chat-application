@@ -1,7 +1,7 @@
 import { useContext, useRef, useEffect, useState } from "react";
 import { Stack } from "react-bootstrap";
 import { AuthContext } from "../../context/AuthContext";
-import { ChatContext } from "../../context/chatContext";
+import { ChatContext } from "../../context/ChatContext";
 import { useFetchRecipientUser } from "../../hooks/useFetchRecipient";
 import moment from "moment";
 import InputEmoji from "react-input-emoji";
