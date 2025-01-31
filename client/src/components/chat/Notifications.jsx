@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { ChatContext } from "../../context/ChatContext";
+import { ChatContext } from "../../context/ChatsContext";
 import { AuthContext } from "../../context/AuthContext";
 import { unreadNotificationsFunc } from "../../utils/unreadNotifications";
 import moment from "moment";
@@ -72,7 +72,7 @@ const Notifications = () => {
                   }
                   onClick={() => {
                     markNotificationAsRead(n, userChats, user, notifications);
-                    setIsOpen(false)
+                    setIsOpen(false);
                   }}
                 >
                   <span>{`${n.senderName} sent you a new message`}</span>

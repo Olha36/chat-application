@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { ChatContext } from "../../context/ChatContext";
+import { ChatContext } from "../../context/ChatsContext";
 
 const PotentialChats = () => {
   const { user } = useContext(AuthContext);

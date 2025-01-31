@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { ChatContext } from "../context/ChatContext";
+import { ChatContext } from "../context/ChatsContext";
 import { baseUrl, getRequest } from "../utils/services";
 
 export const useFetchLatestMessage = (chat) => {
